@@ -4,8 +4,8 @@ import flet as ft
 class View(object):
     def __init__(self, page):
         self._page = page
-        self._page.title = "TdP 2024 - Indovina il Numero"
-        self._page.horizontal_alignment = 'CENTER'
+        self._page.title = "Indovina il Numero" # NOME PAGINA
+        self._page.horizontal_alignment = 'CENTER' # ALLINEA AL CENTRO MA SENZA E' UGUALE
         self._titolo = None
         self._controller = None
 
@@ -32,13 +32,14 @@ class View(object):
                                            on_click=self._controller.handleProva,
                                            disabled=True)
 
-        # row2 = ft.Row([self._btnNuova, self._txtTentativo, self._btnProva],
-        #        alignment=ft.MainAxisAlignment.CENTER)
+#        row2 = ft.Row([self._btnNuova, self._txtTentativo, self._btnProva],
+#                alignment=ft.MainAxisAlignment.CENTER)
 
         #Row 3
         self._lvOut = ft.ListView()
-        self._pb = ft.ProgressBar(width=400, color="amber")
+        self._pb = ft.ProgressBar(width=400, color="red") # crea la linea che si muove
 
+# AGGIUNGE IN ORDINE DESIDERATO I VARI ELEMENTI DELLA PAGINA
         self._page.add(
             ft.Row([
                 ft.Container(self._txtNmax, width=150),

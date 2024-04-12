@@ -10,17 +10,17 @@ class Controller(object):
 
     def handleNuova(self,e):
         self._view._txtMrim.value=self.getMmax()
-        self._view._btnProva.disabled = False
+        self._view._btnProva.disabled = False # rende attivi i pulsanti
         self._view._txtTentativo.disabled = False
-        self._view._lvOut.controls.clear()
+        self._view._lvOut.controls.clear() # cancella cronologia
         self._view._lvOut.controls.append(ft.Text("Indovina il numero.",color="green"))
         self._model.inizializza()
-        self._view._pb.value = self._model._Mrim / self._model._Mmax
+        self._view._pb.value = self._model._Mrim / self._model._Mmax #riempimento barra
         self._view.update()
 
     def handleProva(self,e):
-        tentativo = self._view._txtTentativo.value
-        self._view._txtTentativo.value = ""
+        tentativo = self._view._txtTentativo.value #memotrizza il tentativo
+        self._view._txtTentativo.value = "" #cancella il testo scritto precedentemente
 
         try:
             intTentativo = int(tentativo)
